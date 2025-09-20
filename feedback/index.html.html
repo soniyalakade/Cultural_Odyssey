@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: url('https://t4.ftcdn.net/jpg/05/14/35/87/360_F_514358705_s8m53VS3BCSaCClrbOnOGyG5jnbc3bW8.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 80px auto;
+      display: flex;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .contact-form {
+      flex: 1;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      padding: 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 5px;
+      direction: ltr;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: gold;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .contact-form button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-form button:hover {
+      background: #218838;
+    }
+
+    .contact-info {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .contact-info h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .info-item i {
+      font-size: 20px;
+      margin-right: 15px;
+      color: #333;
+    }
+
+    .info-item p {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <h2 style="text-align:center; margin-top: 40px; font-weight: 400; color: white; text-shadow: 1px 1px 4px #000;">Feedback Form</h2>
+
+  <div class="container">
+    <form class="contact-form" action="https://formspree.io/f/xdkeyylo" method="POST">
+      <h2>Feedback Form</h2>
+
+      <div class="question">
+        <label for="q1">वेबसाइट की जानकारी की गुणवत्ता को आप कितनी स्टार देंगे?</label>
+        <div class="stars">
+          <input type="radio" id="q1-1" name="info_quality" value="1"><label for="q1-1">★</label>
+          <input type="radio" id="q1-2" name="info_quality" value="2"><label for="q1-2">★</label>
+          <input type="radio" id="q1-3" name="info_quality" value="3"><label for="q1-3">★</label>
+          <input type="radio" id="q1-4" name="info_quality" value="4"><label for="q1-4">★</label>
+          <input type="radio" id="q1-5" name="info_quality" value="5"><label for="q1-5">★</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="q2">वेबसाइट का डिज़ाइन और लेआउट आपको कितना पसंद आया?</label>
+        <div class="stars">
+          <input type="radio" id="q2-1" name="design_layout" value="1"><label for="q2-1">★</label>
+          <input type="radio" id="q2-2" name="design_layout" value="2"><label for="q2-2">★</label>
+          <input type="radio" id="q2-3" name="design_layout" value="3"><label for="q2-3">★</label>
+          <input type="radio" id="q2-4" name="design_layout" value="4"><label for="q2-4">★</label>
+          <input type="radio" id="q2-5" name="design_layout" value="5"><label for="q2-5">★</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="q3">आपको जानकारी ढूँढने में कितनी आसानी हुई?</label>
+        <div class="stars">
+          <input type="radio" id="q3-1" name="info_ease" value="1"><label for="q3-1">★</label>
+          <input type="radio" id="q3-2" name="info_ease" value="2"><label for="q3-2">★</label>
+          <input type="radio" id="q3-3" name="info_ease" value="3"><label for="q3-3">★</label>
+          <input type="radio" id="q3-4" name="info_ease" value="4"><label for="q3-4">★</label>
+          <input type="radio" id="q3-5" name="info_ease" value="5"><label for="q3-5">★</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="q4">वेबसाइट की लोडिंग स्पीड को आप कैसे रेट करेंगे?</label>
+        <div class="stars">
+          <input type="radio" id="q4-1" name="loading_speed" value="1"><label for="q4-1">★</label>
+          <input type="radio" id="q4-2" name="loading_speed" value="2"><label for="q4-2">★</label>
+          <input type="radio" id="q4-3" name="loading_speed" value="3"><label for="q4-3">★</label>
+          <input type="radio" id="q4-4" name="loading_speed" value="4"><label for="q4-4">★</label>
+          <input type="radio" id="q4-5" name="loading_speed" value="5"><label for="q4-5">★</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="q5">आपको यह वेबसाइट कितनी उपयोगी लगी?</label>
+        <div class="stars">
+          <input type="radio" id="q5-1" name="usefulness" value="1"><label for="q5-1">★</label>
+          <input type="radio" id="q5-2" name="usefulness" value="2"><label for="q5-2">★</label>
+          <input type="radio" id="q5-3" name="usefulness" value="3"><label for="q5-3">★</label>
+          <input type="radio" id="q5-4" name="usefulness" value="4"><label for="q5-4">★</label>
+          <input type="radio" id="q5-5" name="usefulness" value="5"><label for="q5-5">★</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="q6">क्या आप इस वेबसाइट को दूसरों को सुझाव देंगे?</label>
+        <div class="stars">
+          <input type="radio" id="q6-1" name="recommend" value="1"><label for="q6-1">★</label>
+          <input type="radio" id="q6-2" name="recommend" value="2"><label for="q6-2">★</label>
+          <input type="radio" id="q6-3" name="recommend" value="3"><label for="q6-3">★</label>
+          <input type="radio" id="q6-4" name="recommend" value="4"><label for="q6-4">★</label>
+          <input type="radio" id="q6-5" name="recommend" value="5"><label for="q6-5">★</label>
+        </div>
+      </div>
+
+      <div class="submit-button">
+        <button type="submit">Submit Feedback</button>
+      </div>
+    </form>
+
+    <div class="contact-info">
+      <h2>Contact us</h2>
+      <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>Pimpri Chichwad college of engineering, Pune</p></div>
+      <div class="info-item"><i class="fas fa-phone"></i><p>+91 8799894668</p></div>
+      <div class="info-item"><i class="fas fa-envelope"></i><p>sarthak.bagul24@pccoepune.org </p></div>
+      <div class="info-item"><i class="fas fa-globe"></i><p>https://sarthak018-hub.github.io/Pfolio-master/</p></div>
+    </div>
+  </div>
+
+</body>
+</html>
